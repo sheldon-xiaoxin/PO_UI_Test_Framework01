@@ -11,7 +11,7 @@ class LoginPage(object):
         self.dirver = webdriver.Firefox()
         self.dirver.implicitly_wait(10)
         self.dirver.maximize_window()
-        self.dirver.get("http://47.107.178.45/zentao/www/index.php?m=user&f=login")
+        self.dirver.get("http://127.0.0.1/zentao/user-login.html")
         self.username_inputbox = self.dirver.find_element(By.XPATH,'//input[@name="account"]')  #属性===》页面的控件
         self.password_inputbox = self.dirver.find_element(By.XPATH,'//input[@name="password"]')
         self.login_button =  self.dirver.find_element(By.XPATH,'//button[@id="submit"]')
@@ -31,6 +31,6 @@ class LoginPage(object):
 
 if __name__ == "__main__":
     login_page = LoginPage()
-    login_page.input_username('test01')
-    login_page.input_password('newdream123')
+    login_page.input_username('admin')
+    login_page.input_password('idontKNOW666')
     login_page.click_login()
